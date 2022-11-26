@@ -11,7 +11,7 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages). 
 -->
 
-TODO: This package can be used to make a scrolling text widget(marquee) same as shown on bottom of the news channel.
+ This package can be used to make a scrolling text widget(marquee) same as shown on bottom of the news channel.
 
 ## Features
 
@@ -24,7 +24,7 @@ you can have callback function on the end of any text scrolling
                                       onFinish: () {
                                         //function to change news
                                       },
-                                      text: noticeData[state].news!,
+                                      text: "sample text data",
                                       textStyle: TextStyle(
                                           fontSize: size.height * 0.05),
                                     ),
@@ -32,11 +32,16 @@ you can have callback function on the end of any text scrolling
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
+    ``` Center(
+                                    child: ScrollingText(
+                                      onFinish: () {
+                                        //function to change news
+                                      },
+                                      text: "sample text 2",
+                                      textStyle: TextStyle(
+                                          fontSize: size.height * 0.05),
+                                    ),
+                                  )```
 
-```dart
-const like = 'sample';
-```
 
 

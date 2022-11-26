@@ -1,13 +1,10 @@
-library text_marquee;
+library scrolling_text;
 
 import 'dart:async';
 
 import 'package:flutter/material.dart';
 
-
-
 class ScrollingText extends StatefulWidget {
-
   final String text;
   final TextStyle? textStyle;
   final Axis scrollAxis;
@@ -16,16 +13,15 @@ class ScrollingText extends StatefulWidget {
   final int restTime;
   final VoidCallback onFinish;
 
- const ScrollingText(
+  const ScrollingText(
       {super.key,
-        required this.text,
+      required this.text,
       this.textStyle,
-      this.scrollAxis= Axis.horizontal,
-      this.ratioOfBlankToScreen= 0.9,
-      this.speed= 60.0,
-      this.restTime= 1000,
-      required this.onFinish})
-      ;
+      this.scrollAxis = Axis.horizontal,
+      this.ratioOfBlankToScreen = 0.9,
+      this.speed = 60.0,
+      this.restTime = 1000,
+      required this.onFinish});
 
   @override
   State<StatefulWidget> createState() {
@@ -68,7 +64,8 @@ class ScrollingTextState extends State<ScrollingText>
         }
         position += widget.speed;
         scrollController!.animateTo(position,
-            duration: Duration(milliseconds: widget.restTime), curve: Curves.linear);
+            duration: Duration(milliseconds: widget.restTime),
+            curve: Curves.linear);
       });
     }
   }
@@ -126,4 +123,3 @@ class ScrollingTextState extends State<ScrollingText>
     );
   }
 }
-
