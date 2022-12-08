@@ -4,23 +4,57 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
+
+
 class ScrollingText extends StatefulWidget {
+///[text] is a required field which is animated in vertical/ horizontal direction
   final String text;
+///[TextStyle] class support styling of the [text] parameter
   final TextStyle? textStyle;
+  /// defines scroll direction of the text.
+  ///  [Axis.horizontal] is a default
   final Axis scrollAxis;
-  final double ratioOfBlankToScreen;
+  /// speed of [text] to scroll. 
+  /// 
+  /// default speed is 60 pixels per [restTime]. 
+  /// relative to [restTime]
   final double speed;
+  ///Starting blank offset to the content i.e [text]
+  ///
+  final double? startOffset;
+  ///ending blank offset to the content i.e [text]
+  ///
+  final double? endOffset;
+   ///It defines speed of [text] to scroll. 
+  /// 
+  /// default [restTime] is 1000 milliseconds
+ ///measured in [Duration] in [milliseconds]
+  /// relative to [speed]
   final int restTime;
+  /// [Curve] class defines way how text scroll inside the widget 
+  /// 
+  /// [Curves.linear] is a default [scrollCurve]
+  final Curve? scrollCurve;
+  /// this is called whenever a [text] mequeue finishes to scroll along with [startOffset] and [endOffset]
+  /// 
+  /// specially call this to change the content from outside the class
+  
   final VoidCallback onFinish;
+
+
+///Scorlling Text provides marquee of text with callback at the end of scroll and also staring and ending of the text 
 
   const ScrollingText(
       {super.key,
+
       required this.text,
       this.textStyle,
       this.scrollAxis = Axis.horizontal,
-      this.ratioOfBlankToScreen = 0.9,
       this.speed = 60.0,
+      this.startOffset,
+      this.endOffset,
       this.restTime = 1000,
+      this.scrollCurve,
       required this.onFinish});
 
   @override
@@ -65,7 +99,7 @@ class ScrollingTextState extends State<ScrollingText>
         position += widget.speed;
         scrollController!.animateTo(position,
             duration: Duration(milliseconds: widget.restTime),
-            curve: Curves.linear);
+            curve: widget.scrollCurve ?? Curves.linear);
       });
     }
   }
@@ -94,8 +128,11 @@ class ScrollingTextState extends State<ScrollingText>
     );
   }
 
-  Widget getCenterChild() {
-    return Container(width: screenWidth! * widget.ratioOfBlankToScreen);
+  Widget getCenterChild(bool isStart) {
+    if (widget.scrollAxis == Axis.vertical) {
+      return Container(height: isStart ? widget.startOffset : widget.endOffset);
+    }
+    return Container(width: isStart ? widget.startOffset : widget.endOffset);
   }
 
   @override
@@ -115,9 +152,9 @@ class ScrollingTextState extends State<ScrollingText>
         controller: scrollController,
         physics: NeverScrollableScrollPhysics(),
         children: <Widget>[
-          getCenterChild(),
+          getCenterChild(true),
           getBothEndsChild(),
-          getCenterChild(),
+          getCenterChild(false),
         ],
       ),
     );
