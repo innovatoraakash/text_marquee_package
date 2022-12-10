@@ -28,7 +28,6 @@ class ScrollingText extends StatefulWidget {
    ///It defines speed of [text] to scroll. 
   /// 
   /// default [restTime] is 1000 milliseconds
- ///measured in [Duration] in [milliseconds]
   /// relative to [speed]
   final int restTime;
   /// [Curve] class defines way how text scroll inside the widget 
@@ -42,12 +41,12 @@ class ScrollingText extends StatefulWidget {
   final VoidCallback onFinish;
 
 
-///Scorlling Text provides marquee of text with callback at the end of scroll and also staring and ending of the text 
+///Scorlling Text provides marquee of text with callback at the end of scroll and also staring and ending offset of the text 
 
   const ScrollingText(
       {super.key,
-
       required this.text,
+
       this.textStyle,
       this.scrollAxis = Axis.horizontal,
       this.speed = 60.0,
@@ -70,7 +69,7 @@ class ScrollingTextState extends State<ScrollingText>
   double? screenHeight;
   double position = 0.0;
   Timer? timer;
-  GlobalKey _key = GlobalKey();
+  GlobalKey key = GlobalKey();
 
   @override
   void initState() {
@@ -82,11 +81,11 @@ class ScrollingTextState extends State<ScrollingText>
   }
 
   void startTimer() {
-    if (_key.currentContext != null) {
-      double widgetWidth =
-          _key.currentContext!.findRenderObject()!.paintBounds.size.width;
-      double widgetHeight =
-          _key.currentContext!.findRenderObject()!.paintBounds.size.height;
+    if (key.currentContext != null) {
+      // double widgetWidth =
+      //     _key.currentContext!.findRenderObject()!.paintBounds.size.width;
+      // double widgetHeight =
+      //     _key.currentContext!.findRenderObject()!.paintBounds.size.height;
 
       timer = Timer.periodic(Duration(milliseconds: widget.restTime), (timer) {
         double maxScrollExtent = scrollController!.position.maxScrollExtent;
@@ -147,10 +146,10 @@ class ScrollingTextState extends State<ScrollingText>
   Widget build(BuildContext context) {
     return Center(
       child: ListView(
-        key: _key,
+        key: key,
         scrollDirection: widget.scrollAxis,
         controller: scrollController,
-        physics: NeverScrollableScrollPhysics(),
+        physics:const NeverScrollableScrollPhysics(),
         children: <Widget>[
           getCenterChild(true),
           getBothEndsChild(),

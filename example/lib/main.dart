@@ -1,36 +1,10 @@
-<!-- 
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
-
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages). 
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages). 
--->
-## scrolling_text
-
- This package can be used to make a scrolling text widget(marquee) same as shown on bottom of the news channel.
-
-## Features
-custom text style
-start and ending offset for text
-you can have callback function on the end of any text scrolling 
-controlled speed with speed and rest parameters
-vertical or horizontal scroll direction
-
-
-
-## Usage
-Add this Project to Pubspec and import as
-
+import 'package:flutter/material.dart';
 import 'package:scrolling_text/scrolling_text.dart';
 
-You can use as this to play multiple text in marquee
+void main() {
+  runApp(const MyApp());
+}
 
-```dart
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
@@ -76,8 +50,3 @@ List<String> news = [
   'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
   'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using  making it look like readable English.'
 ];
-
-```
-## Basic Results
-
-![](https://github.com/Your_Repository_Name/Your_GIF_Name.gif)

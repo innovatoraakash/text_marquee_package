@@ -1,5 +1,5 @@
 name: scrolling_text
-description: Text ticker.
+description: This package is a Text ticker that helps to make vertical or horizontal scrolling text with custom callback, speed and style .
 version: 0.0.1
 homepage: https://github.com/innovatoraakash/text_marquee_package
 
