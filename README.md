@@ -89,3 +89,4 @@ Vertical Example
 ![](https://github.com/innovatoraakash/text_marquee_package/blob/master/assets/vertical.mp4)
 
 
+<video src='https://github.com/innovatoraakash/text_marquee_package/blob/master/assets/vertical.mp4' width=180/>
