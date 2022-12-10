@@ -80,4 +80,12 @@ List<String> news = [
 ```
 ## Basic Results
 
-![](https://github.com/Your_Repository_Name/Your_GIF_Name.gif)
+Horizontal Example:
+
+![](https://github.com/innovatoraakash/text_marquee_package/blob/master/assets/horizontal.mp4)
+
+Vertical Example
+
+![](https://github.com/innovatoraakash/text_marquee_package/blob/master/assets/vertical.mp4)
+
+
