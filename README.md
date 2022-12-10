@@ -15,11 +15,11 @@ and the Flutter guide for
  This package can be used to make a scrolling text widget(marquee) same as shown on bottom of the news channel.
 
 ## Features
-custom text style
-start and ending offset for text
-you can have callback function on the end of any text scrolling 
-controlled speed with speed and rest parameters
-vertical or horizontal scroll direction
+- custom text style
+- start and ending offset for text
+- you can have callback function on the end of any text scrolling 
+- controlled speed with speed and rest parameters
+- vertical or horizontal scroll direction
 
 
 
@@ -82,11 +82,11 @@ List<String> news = [
 
 Horizontal Example:
 
-![](https://github.com/innovatoraakash/text_marquee_package/blob/master/assets/horizontal.mp4)
+![](https://github.com/innovatoraakash/text_marquee_package/blob/master/assets/horizontal.gif)
 
 Vertical Example
 
 ![](https://github.com/innovatoraakash/text_marquee_package/blob/master/assets/vertical.mp4)
 
 
-<video src='https://github.com/innovatoraakash/text_marquee_package/blob/master/assets/vertical.mp4' width=180/>
+<video src='https://github.com/innovatoraakash/text_marquee_package/blob/master/assets/horizontal.gif' />
