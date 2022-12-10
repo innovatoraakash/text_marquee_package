@@ -86,7 +86,5 @@ Horizontal Example:
 
 Vertical Example
 
-![](https://github.com/innovatoraakash/text_marquee_package/blob/master/assets/vertical.mp4)
+![](https://github.com/innovatoraakash/text_marquee_package/blob/master/assets/vertical.gif)
 
-
-<video src='https://github.com/innovatoraakash/text_marquee_package/blob/master/assets/horizontal.gif' />
